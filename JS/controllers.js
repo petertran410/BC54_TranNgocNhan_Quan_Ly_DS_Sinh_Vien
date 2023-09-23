@@ -54,7 +54,7 @@ function renderInfoSV(dssv) {
       <tr>
         <td>${sv.mssv}</td>
         <td>${sv.tenSV}</td>
-        <td>${sv.passSV}</td>
+        <td>${sv.emailSV}</td>
         <td>${sv.tinhDTB}</td>
         <td>
           <button onclick="xoaSV('${sv.mssv}')" class='btn btn-danger'>Xoá</button>
