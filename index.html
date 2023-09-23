@@ -19,49 +19,49 @@
           <form id="formQLSV">
             <div class="row">
               <div class="col-6 form-group">
-                <label for="">Mã Sinh Viên : </label>
-                <input type="text" class="form-control" id="txtMaSV" />
-                <span id="spanMaSV" class="text-danger"></span>
+                <label for="">Mã Sinh Vien : </label>
+                <input type="text" class="form-control" id="MSSV" />
+                <span id="addMSSV" class="text-danger"></span>
               </div>
               <div class="col-6 form-group">
                 <label for="">Tên Sinh Viên : </label>
-                <input type="text" class="form-control" id="txtTenSV" />
-                <span id="spanTenSV" class="text-danger"></span>
+                <input type="text" class="form-control" id="TenSV" />
+                <span id="addTenSV" class="text-danger"></span>
               </div>
             </div>
             <div class="row">
               <div class="col-6 form-group">
                 <label for="">Email : </label>
-                <input type="text" class="form-control" id="txtEmail" />
-                <span id="spanEmailSV" class="text-danger"></span>
+                <input type="text" class="form-control" id="EmailSV" />
+                <span id="addEmailSV" class="text-danger"></span>
               </div>
               <div class="col-6 form-group">
                 <label for="">Mật khẩu: </label>
-                <input type="password" class="form-control" id="txtPass" />
-                <span id="spanMatKhau" class="text-danger"></span>
+                <input type="password" class="form-control" id="PassSV" />
+                <span id="addPass" class="text-danger"></span>
               </div>
             </div>
 
             <div class="row">
               <div class="col-4 form-group">
                 <label for="">Điểm toán : </label>
-                <input type="text" class="form-control" id="txtDiemToan" />
-                <span id="spanToan" class="text-danger"></span>
+                <input type="text" class="form-control" id="DiemToanSV" />
+                <span id="addToan" class="text-danger"></span>
               </div>
               <div class="col-4 form-group">
                 <label for="">Điểm lý : </label>
-                <input type="text" class="form-control" id="txtDiemLy" />
-                <span id="spanLy" class="text-danger"></span>
+                <input type="text" class="form-control" id="DiemLySV" />
+                <span id="addLy" class="text-danger"></span>
               </div>
               <div class="col-4 form-group">
                 <label for="">Điểm hóa : </label>
-                <input type="text" class="form-control" id="txtDiemHoa" />
-                <span id="spanHoa" class="text-danger"></span>
+                <input type="text" class="form-control" id="DiemHoaSV" />
+                <span id="addHoa" class="text-danger"></span>
               </div>
             </div>
 
             <div class="form-group text-center">
-              <button type="button" onclick="themSV()" class="btn btn-success">
+              <button type="button" onclick="addSV()" class="btn btn-success">
                 Thêm Sinh Viên
               </button>
 
@@ -97,7 +97,7 @@
                 <th>Thao tác</th>
               </tr>
             </thead>
-            <tbody id="tbodySinhVien"></tbody>
+            <tbody id="rendeInfoSV"></tbody>
           </table>
         </div>
       </div>
@@ -117,7 +117,7 @@
       <!-- controller.js -->
       <script src="./JS/controllers.js"></script>
       <!-- my js -->
-      <script src="./JS/index.js"></script>
+      <script src="JS/index.js"></script>
     </div>
   </body>
 </html>

@@ -1,49 +1,67 @@
-function layThongTinTuForm() {
-  var ma = document.getElementById("txtMaSV").value;
-  var ten = document.getElementById("txtTenSV").value;
-  var matKhau = document.getElementById("txtPass").value;
-  var email = document.getElementById("txtEmail").value;
-  var toan = document.getElementById("txtDiemToan").value;
-  var ly = document.getElementById("txtDiemLy").value;
-  var hoa = document.getElementById("txtDiemHoa").value;
-  var sv = new sinhVien(ma, ten, matKhau, email, toan, ly, hoa);
+function addInfoSV() {
+  const getValueSV = (elementId) => document.getElementById(elementId).value;
+  const mssv = getValueSV("MSSV");
+  const tenSV = getValueSV("TenSV");
+  const emailSV = getValueSV("EmailSV");
+  const passSV = getValueSV("PassSV");
+  const diemToanSV = parseFloat(getValueSV("DiemToanSV"));
+  const diemLySV = parseFloat(getValueSV("DiemLySV"));
+  const diemHoaSV = parseFloat(getValueSV("DiemHoaSV"));
+  const tinhDTB = (diemToanSV + diemLySV + diemHoaSV) / 3;
+
+  const sv = new createSinhVienForm(
+    mssv,
+    tenSV,
+    emailSV,
+    passSV,
+    diemToanSV,
+    diemLySV,
+    diemHoaSV,
+    tinhDTB
+  );
 
   return sv;
 }
 
-class sinhVien {
-  constructor(ma, ten, matKhau, email, toan, ly, hoa) {
-    this.ma = ma;
-    this.ten = ten;
-    this.matKhau = matKhau;
-    this.email = email;
-    this.toan = toan;
-    this.ly = ly;
-    this.hoa = hoa;
-    this.tinhDTB = function () {
-      var dtb = (this.toan + this.ly + this.hoa) / 4;
-      return dtb;
-    };
+class createSinhVienForm {
+  constructor(
+    mssv,
+    tenSV,
+    passSV,
+    emailSV,
+    diemToanSV,
+    diemLySV,
+    diemHoaSV,
+    tinhDTB
+  ) {
+    this.mssv = mssv;
+    this.tenSV = tenSV;
+    this.emailSV = emailSV;
+    this.passSV = passSV;
+    this.diemToanSV = diemToanSV;
+    this.diemLySV = diemLySV;
+    this.diemHoaSV = diemHoaSV;
+    this.tinhDTB = tinhDTB;
   }
 }
 
-function renderDSSV(dssv) {
-  const tbody = document.querySelector("#tbodySinhVien");
-  let contentHTML = "";
+function renderInfoSV(dssv) {
+  const renderOut = document.querySelector("#rendeInfoSV");
+  let renderHTML = "";
 
   dssv.forEach((sv) => {
-    contentHTML += `
+    renderHTML += `
       <tr>
-        <td>${sv.ma}</td>
-        <td>${sv.ten}</td>
-        <td>${sv.email}</td>
-        <td>0</td>
+        <td>${sv.mssv}</td>
+        <td>${sv.tenSV}</td>
+        <td>${sv.emailSV}</td>
+        <td>${sv.tinhDTB}</td>
         <td>
-          <button onclick="xoaSV('${sv.ma}')" class='btn btn-danger'>Xoá</button>
-          <button onclick="suaSV('${sv.ma}')" class='btn btn-warning'>Sửa</button>
+          <button onclick="xoaSV('${sv.mssv}')" class='btn btn-danger'>Xoá</button>
+          <button onclick="suaSV('${sv.mssv}')" class='btn btn-warning'>Sửa</button>
         </td>
       </tr>`;
   });
 
-  tbody.innerHTML = contentHTML;
+  renderOut.innerHTML = renderHTML;
 }
