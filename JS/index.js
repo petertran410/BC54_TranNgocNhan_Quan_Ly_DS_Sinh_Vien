@@ -30,3 +30,15 @@ function xoaSV(id) {
     renderInfoSV(dssv);
   }
 }
+
+function suaSV(id) {
+  const index = dssv.findIndex((item) => item.mssv === id);
+
+  if (index !== -1) {
+    const { mssv } = dssv[index];
+    document.getElementById("addMSSV").value = mssv;
+  } else {
+    console.log("Sinh viên không tồn tại");
+  }
+  renderInfoSV(dssv);
+}
